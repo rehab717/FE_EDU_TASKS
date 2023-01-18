@@ -1,0 +1,15 @@
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="catalog.product.related" remove="true" />
+        <referenceBlock name="product.info.grouped">
+            <arguments>
+                <argument name="class" xsi:type="string">page-product-combined</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="product.info.bundle">
+            <arguments>
+                <argument name="class" xsi:type="string">page-product-combined</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>
