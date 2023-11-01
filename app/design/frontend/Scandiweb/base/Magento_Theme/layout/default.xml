@@ -15,10 +15,18 @@
             </block>
         </referenceContainer>
         <referenceContainer name="footer">
-            <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" template="Magento_Newsletter::subscribe.phtml" ifconfig="newsletter/general/active"/>
+            <container name="footer.newsletter">
+                <move element="form.subscribe" destination="footer.newsletter"/>
+            </container> 
         </referenceContainer>
-         <move element="form.subscribe" destination="main" before="footer"/>
+        <referenceContainer name="content">
+            <block class="Magento\Catalog\Block\Product\View" name="product.view">
+                <arguments>
+                    <argument name="template" xsi:type="string">Magento_Catalog::product/view.phtml</argument>
+                </arguments>
+                <block class="Magento\Catalog\Block\Product\View\Type\Grouped" name="product.info.grouped" as="grouped" template="Magento_Catalog::product/view/type/grouped.phtml" add_class="page-product-combined" />
+                <block class="Magento\Catalog\Block\Product\View\Type\Bundle" name="product.info.bundle" as="bundle" template="Magento_Catalog::product/view/type/bundle.phtml" add_class="page-product-combined" />
+            </block>
+        </referenceContainer>
     </body>
 </page>
-
-
